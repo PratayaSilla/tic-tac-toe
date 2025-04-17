@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.game-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  transition: filter 0.3s ease;
+  z-index: 1;
+}
+
+.blurred {
+  filter: blur(5px);
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.status {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #f7f7f7;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.square:hover {
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.restart-button {
+  background-color: #667eea;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.restart-button:hover {
+  background-color: #5a67d8;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 300px;
+  width: 80%;
+  animation: popIn 0.3s ease-out;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
